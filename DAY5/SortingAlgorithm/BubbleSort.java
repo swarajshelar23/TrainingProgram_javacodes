@@ -1,4 +1,4 @@
-package DAY5.Array;
+package DAY5.SortingAlgorithm;
 
 public class BubbleSort {
     static void bubbleSort(int arr[]){

@@ -1,4 +1,4 @@
-package DAY5.Array;
+package DAY5.SortingAlgorithm;
 
 public class LinearSearch {
     static void findElement(int arr[], int key) {
