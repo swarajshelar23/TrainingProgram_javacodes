@@ -1,0 +1,14 @@
+RAM - USED FOR FAST PROCESSING OF INPUT AND OUTPUT OPERATION. USED FOR EXECTUTING INPUT/OUTPUT.
+CMD "JAVA" - ONLY SHOWA THE OUTPUT AND "JAVAC" - SHOW THE .CLASS FILES
+JAVA IS PLATFORM INDEPENDENT (WORKS ON ANY OS)
+JAVA PLATFORM = JDK(JAVA DEVELOPMENT KIT) + JRE(JAVA RUNTIME KIT) + JVM(JAVA VIRTUAL MACHINE)
+JRE GIVES ALL THE JAVA FUNCTOINALITIES
+JVM TO RUN THE PROGRAM
+JDK contains the JRE, and the JRE contains the JVM.
+
+TYPES OF DATA TYPE -> PRIMITIVE(INT, FLOAT, ETC) AND NON-PRIMITIVE(ARRAY ,ETC) 
+CONDITIONAL STATEMENTS -> IF, IF ELSE, IF ELSE IF, LADDER IF
+ loops ->(i)iterator is the thing which run all the iteration in loops
+ paradigms three types procedural, functional, oops.
+ procedural -> top-down appoarch (waste of time by executing unwanted code) solve it by making it into chunks(function).
+ functional -> Reuse
