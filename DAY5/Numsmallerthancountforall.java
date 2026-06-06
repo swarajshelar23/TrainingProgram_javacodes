@@ -1,3 +1,4 @@
+package DAY5;
 class Numsmallerthancountforall{
     public static void main(String[] args) {
         int[] nums = {8, 1, 2, 9, 3};
