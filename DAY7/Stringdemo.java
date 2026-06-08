@@ -32,14 +32,23 @@ public class Stringdemo{
         System.out.println(str5.substring(3, 8)); 
         System.out.println(str5.replace("o","a"));
 
-        String str6 = "Java,Python,C++";
-        String[] subjects = str6.split(",");
+        String str6 = "Java Python C++";
+        String[] subjects = str6.split(" ");
         for(String subject : subjects){
             System.out.println(subject);
         }
         System.out.println(str5.trim());
     
-    
+
+        String name = "dragon ball z";
+        for(int i = 0; i < name.length(); i++){
+            name=name.toLowerCase();
+            char x = name.charAt(i);
+            if (x != 'a' && x != 'e' && x != 'i' && x != 'o' && x != 'u'){
+                System.out.println(name.charAt(i));
+            }
+            
+        }
     
     }
 
