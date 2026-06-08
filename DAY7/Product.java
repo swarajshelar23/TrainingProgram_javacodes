@@ -71,13 +71,18 @@ public class Product {
         System.out.println("Total inventory value: " + totalValue);
     }
 
-    static void viewproductswhichcontaincharacter(String[] name, char ch) {
-        System.out.println("Products containing character '" + ch + "':");
+    static void viewproductswhichcontaincharacter(String[] name) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter character to search: ");
+        char searchChar = sc.nextLine().charAt(0);
+        System.out.println("Products containing character '" + searchChar + "':");
         for (String productName : name) {
-            if (productName.indexOf(ch) != -1) {
+            if (productName.indexOf(searchChar) != -1) {
                 System.out.println("- " + productName);
             }
         }
+        sc.close();
     }
 
     public static void main(String[] args) {
@@ -90,6 +95,6 @@ public class Product {
         lowestPricedProduct(products, prices);
         searchProductByName(products);
         totalinventoryValue(products, prices);
-        viewproductswhichcontaincharacter(products, 'a'); // Example: View products containing the character 'a'
+        viewproductswhichcontaincharacter(products);
     }
 }
