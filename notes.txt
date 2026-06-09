@@ -8,7 +8,10 @@ JDK contains the JRE, and the JRE contains the JVM.
 
 TYPES OF DATA TYPE -> PRIMITIVE(INT, FLOAT, ETC) AND NON-PRIMITIVE(ARRAY ,ETC) 
 CONDITIONAL STATEMENTS -> IF, IF ELSE, IF ELSE IF, LADDER IF
- loops ->(i)iterator is the thing which run all the iteration in loops
- paradigms three types procedural, functional, oops.
- procedural -> top-down appoarch (waste of time by executing unwanted code) solve it by making it into chunks(function).
- functional -> Reuse
+loops ->(i)iterator is the thing which run all the iteration in loops
+paradigms three types procedural, functional, oops.
+procedural -> top-down appoarch (waste of time by executing unwanted code) solve it by making it into chunks(function).
+Functional -> MORE REUSEBILITY, MORE READABILITY, MORE MODULAR.
+OOPS -> Real World problems are solved, It bind the Logic into single bind, In a class the logic code are not called function instead class method.
+object -> Reference of the class 
+Constructor -> Default, Parameter, Copy
