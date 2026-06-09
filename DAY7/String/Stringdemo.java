@@ -1,4 +1,4 @@
-package DAY7;
+package DAY7.String;
 public class Stringdemo{
     public static void main(String[] args){
         String str = "Swaraj";
