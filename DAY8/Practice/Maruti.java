@@ -1,4 +1,4 @@
-package DAY8.OOPS;
+package DAY8.Practice;
 
 public class Maruti {
     static int Cartyres = 4;

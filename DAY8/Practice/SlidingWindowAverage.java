@@ -1,4 +1,4 @@
-package DAY8;
+package DAY8.Practice;
 
 public class SlidingWindowAverage {
     public static void main(String[] args){
