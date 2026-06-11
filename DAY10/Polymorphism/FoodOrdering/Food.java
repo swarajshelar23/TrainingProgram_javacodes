@@ -1,4 +1,4 @@
-package DAY10.Polymorphism;
+package DAY10.Polymorphism.FoodOrdering;
 
 
 
@@ -13,6 +13,10 @@ public class Food {
     }
 
     void Order(String item, int quantity){
+        if(item.isEmpty() || quantity <= 0){
+            System.out.println("Invalid order. Please select a valid item and quantity.");
+            return;
+        }
         int price = 20;
         int total = price * quantity;
         System.out.println("You have ordered: " + quantity + " " + item + " for a total of $" + total);
@@ -20,6 +24,10 @@ public class Food {
     }
 
     void Order(String item, int quantity, double discount){
+        if(item == null || item.isEmpty() || quantity <= 0 || discount < 0 || discount > 1){
+            System.out.println("Invalid order. Please select a valid item, quantity, and discount.");
+            return;
+        }
         int price = 20;
         double total = quantity * price;
         double discountedTotal = total - (total * discount);
@@ -27,6 +35,11 @@ public class Food {
     }
 
     void Order(String item[], int quantity[]){
+        if(item == null || quantity == null || item.length != quantity.length){
+            System.out.println("Invalid order. Please select valid items and quantities.");
+            return;
+        }
+
         int grandTotal = 0;
         int price = 200;
         for(int i = 0; i < item.length; i++){
@@ -36,6 +49,8 @@ public class Food {
         }
         System.out.println("Total amount: $" + grandTotal);
     }
+
+
 
 
 

@@ -1,4 +1,4 @@
-package DAY10.Polymorphism;
+package DAY10.Polymorphism.FoodOrdering;
 
 public class FoodApp {
     public static void main(String[] args) {
@@ -12,6 +12,6 @@ public class FoodApp {
         String items[] = {"Sushi", "Ramen", "Tempura"};
         int quantities[] = {2, 1, 3};
         cust4.Order(items, quantities);
-        
+
     }
 }
