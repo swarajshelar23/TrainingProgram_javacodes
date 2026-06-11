@@ -1,94 +1,96 @@
-package DAY9.librayManagement;
+package Day9.Practice;
 
+class Book {
 
+    private static int counter = 1000;
 
-public class Book {
+    private int id;
+    private String name;
+    private String author;
+    private String category;
+    private double price;
+    private int copies;
 
-    private static int nextId = 1;
-    private static int totalBooks = 0;
+    Book(String name,
+            String author,
+            String category,
+            double price,
+            int copies) {
 
-    int id;
-    String name;
-    String authorName;
-    String category;
-    double price;
-    int availableCopies;
+        this.id = ++counter;
 
-    public Book(String name, String authorName, String category,
-                double price, int availableCopies) {
+        this.name = name.trim().isEmpty() ? "Unknown Book" : name.trim();
 
-        // Auto-generated ID
-        this.id = nextId++;
-
-        // Default Book Name
-        if (name == null || name.trim().isEmpty()) {
-            this.name = "Unknown Book";
-        } else {
-            this.name = name;
-        }
-
-        // Remove extra spaces
-        this.authorName = authorName.trim();
-
-        // Price validation
-        if (price < 0) {
-            this.price = 0;
-        } else {
-            this.price = price;
-        }
-
-        // Available copies validation
-        if (availableCopies < 0) {
-            this.availableCopies = 0;
-        } else {
-            this.availableCopies = availableCopies;
-        }
+        this.author = author.trim().isEmpty() ? "Unknown Author" : author.trim();
 
         this.category = category;
 
-        totalBooks++;
+        this.price = Math.max(price, 0);
+
+        this.copies = Math.max(copies, 0);
+
     }
 
-    // Display Book Details
-    public void display() {
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("Author: " + authorName);
-        System.out.println("Category: " + category);
-        System.out.println("Price: " + price);
-        System.out.println("Available Copies: " + availableCopies);
-        System.out.println("-------------------------");
+    void display() {
+
+        System.out.println(id + " "
+                + name + " "
+                + author + " "
+                + price + " "
+                + copies);
     }
 
-    // Borrow Book
-    public void borrowBook() {
-        if (availableCopies > 0) {
-            availableCopies--;
-            System.out.println(name + " borrowed successfully.");
-        } else {
-            System.out.println(name + " is not available.");
+    boolean isAvailable() {
+
+        return copies > 0;
+
+    }
+
+    void borrowBook() {
+
+        if (copies > 0) {
+
+            copies--;
+
         }
     }
 
-    // Return Book
-    public void returnBook() {
-        availableCopies++;
-        System.out.println(name + " returned successfully.");
+    void returnBook() {
+
+        copies++;
+
     }
 
-    // Check Availability
-    public boolean isAvailable() {
-        return availableCopies > 0;
+    void updatePrice(double price) {
+
+        if (price >= 0)
+
+            this.price = price;
+
     }
 
-    // Update Price
-    public void updatePrice(double newPrice) {
-        if (newPrice >= 0) {
-            price = newPrice;
-        }
+    double inventoryValue() {
+
+        return price * copies;
+
     }
 
-    public static int getTotalBooks() {
-        return totalBooks;
+    String getName() {
+
+        return name;
+
     }
+
+    String getAuthor() {
+
+        return author;
+
+    }
+
+    double getPrice() {
+
+        return price;
+
+    }
+
 }
