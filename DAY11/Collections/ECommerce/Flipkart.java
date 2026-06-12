@@ -1,8 +1,6 @@
 package DAY11.Collections.ECommerce;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
+import java.util.*;
 public class Flipkart {
 
     ArrayList<Product> products = new ArrayList<>();
@@ -41,30 +39,42 @@ public class Flipkart {
         }
     }
 
+    void searchProduct(String productId) {
+
+    System.out.println("Searching for: [" + productId + "]");
+
+    for (Product product : products) {
+
+        System.out.println("Checking: [" + product.getProductId() + "]");
+
+        if (product.getProductId().equals(productId)) {
+            System.out.println("Product found: " + product);
+            return;
+        }
+    }
+
+    System.out.println("Product not found.");
+}
+
     // Sort Products by Price
-    void sortProducts() {
-
-        products.sort((p1, p2) ->
-                Double.compare(p1.getPrice(), p2.getPrice()));
-
-        System.out.println("Products sorted by price.");
+    // 
+    public List<Product> sortProductsByPrice() {
+        List<Product> sortedProducts = new ArrayList<>(products);
+        Collections.sort(sortedProducts);
+        return sortedProducts;
     }
 
     // Delete Product
     void deleteProduct(String productId) {
-
-        Iterator<Product> iterator = products.iterator();
-
-        while (iterator.hasNext()) {
-            Product product = iterator.next();
+        for (Product product : products) {
 
             if (product.getProductId().equals(productId)) {
-                iterator.remove();
+                products.remove(product);
                 System.out.println("Product deleted successfully.");
                 return;
             }
         }
-
         System.out.println("Product not found.");
     }
-}
+
+    }

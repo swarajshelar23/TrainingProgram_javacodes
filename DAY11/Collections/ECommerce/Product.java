@@ -1,6 +1,6 @@
 package DAY11.Collections.ECommerce;
 
-public class Product {
+public class Product implements Comparable<Product> {
 
     private String productId;
     private String productName;
@@ -54,7 +54,10 @@ public class Product {
         this.category = category;
     }
 
-    
 
-    
+
+    @Override
+    public int compareTo(Product other) {
+        return Double.compare(this.price, other.price);
+    }
 }
