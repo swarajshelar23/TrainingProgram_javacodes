@@ -20,3 +20,4 @@ Java provides collection interfaces like List, Set, Map, and Queue, with ready-m
 
 
 ArrayList -> duplicate element allowed, indexing, 
+REVIEW CLASS -> REVIEW_ID, WILL HAVE A OBJECT PRODUCT, REVIEW KI LIST, SEARCH REVIEW BY PRODUCTNAME, UPDATE REVIEW OF PRODUCT, SORT REVIEW BY REVIEW_ID

@@ -15,12 +15,22 @@ public class App {
         Product product4 = new Product("104", "Book", 500, "Books");
         Product product5 = new Product("105", "Shoes", 1500, "Fashion");
         Product product6 = new Product("106", "Watch", 2500, "Accessories");
+        Review review1 = new Review("R101", "101", "Great laptop!", 5);
+        Review review2 = new Review("R102", "102", "Good value for money.", 4);
+        Review review3 = new Review("R103", "103", "Average sound quality.", 3);
+        Review review4 = new Review("R104", "104", "Interesting read.", 4);
+        Review review5 = new Review("R105", "105", "Comfortable shoes.", 5);
         flipkart.addToCart(product1);
         flipkart.addToCart(product2);
         flipkart.addToCart(product3);
         flipkart.addToCart(product4);
         flipkart.addToCart(product5);
         flipkart.addToCart(product6);
+        flipkart.addReview(review1);
+        flipkart.addReview(review2);
+        flipkart.addReview(review3);
+        flipkart.addReview(review4);
+        flipkart.addReview(review5);
 
         while (true) {
 
@@ -31,6 +41,11 @@ public class App {
             System.out.println("4. Sort Products");
             System.out.println("5. Delete Product");
             System.out.println("6. Search Product");
+            System.out.println("7. Add Review");
+            System.out.println("8. Display Reviews");
+            System.out.println("9. Search Review By Product Name");
+            System.out.println("10. Update Review");
+            System.out.println("11. Sort Reviews By Review ID");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
 
@@ -97,6 +112,77 @@ public class App {
                     String searchId = sc.nextLine();
 
                     flipkart.searchProduct(searchId);
+                    break;
+                
+                case 7:
+
+                    System.out.print("Enter Review ID: ");
+                    String reviewId = sc.nextLine();
+
+                    System.out.print("Enter Product ID: ");
+                    String productId = sc.nextLine();
+
+                    Product foundProduct = flipkart.getProductById(productId);
+
+                    if(foundProduct == null){   
+                    System.out.println("Product not found.");
+                    break;
+                    }
+
+                    System.out.print("Enter Comment: ");
+                    String comment = sc.nextLine();
+
+                    System.out.print("Enter Rating: ");
+                    int rating = sc.nextInt();
+                    sc.nextLine();
+
+                    Review review =  new Review(
+                                    reviewId,
+                                    foundProduct.getProductId(),
+                                    comment,
+                                    rating);
+
+                        flipkart.addReview(review);
+                        break;
+                    
+                case 8:
+
+                    flipkart.displayAllReviews();
+                    break;
+
+                case 9:
+                    System.out.print("Enter Product ID to search reviews: ");
+                     String productName = sc.nextLine();
+
+                    flipkart.searchReview(productName);
+                    break;
+
+                case 10:
+
+                    System.out.print("Enter Review ID: ");
+                    String updateReviewId = sc.nextLine();
+
+                    System.out.print("Enter New Comment: ");
+                    String newComment = sc.nextLine();
+
+                    System.out.print("Enter New Rating: ");
+                    int newRating = sc.nextInt();
+                    sc.nextLine();
+
+                    flipkart.updateReview(
+                            updateReviewId,
+                            newComment,
+                            newRating
+                            );
+
+                            break;
+                case 11:
+                    List<Review> sortedReviews =
+                        flipkart.sortReviewsById();
+
+                    for(Review sortedReview : sortedReviews){
+                    System.out.println(sortedReview);
+                    }
                     break;
 
                 case 0:
