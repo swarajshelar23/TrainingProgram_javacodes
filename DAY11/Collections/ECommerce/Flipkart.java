@@ -1,5 +1,5 @@
 package DAY11.Collections.ECommerce;
-import java.util.*;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -10,7 +10,7 @@ public class Flipkart {
     // Add Product
     void addToCart(Product product) {
         products.add(product);
-        System.out.println(product.productName + " added successfully.");
+        System.out.println(product.getProductName() + " added successfully.");
     }
 
     // Update Product Name
@@ -18,8 +18,8 @@ public class Flipkart {
 
         for (Product product : products) {
 
-            if (product.productId.equals(productId)) {
-                product.productName = newName;
+            if (product.getProductId().equals(productId)) {
+                product.setProductName(newName);
                 System.out.println("Product updated successfully.");
                 return;
             }
@@ -44,7 +44,8 @@ public class Flipkart {
     // Sort Products by Price
     void sortProducts() {
 
-        products.sort((p1, p2) -> Double.compare(p1.price, p2.price));
+        products.sort((p1, p2) ->
+                Double.compare(p1.getPrice(), p2.getPrice()));
 
         System.out.println("Products sorted by price.");
     }
@@ -57,7 +58,7 @@ public class Flipkart {
         while (iterator.hasNext()) {
             Product product = iterator.next();
 
-            if (product.productId.equals(productId)) {
+            if (product.getProductId().equals(productId)) {
                 iterator.remove();
                 System.out.println("Product deleted successfully.");
                 return;
