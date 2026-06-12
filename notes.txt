@@ -15,3 +15,8 @@ Functional -> MORE REUSEBILITY, MORE READABILITY, MORE MODULAR.
 OOPS -> Real World problems are solved, It bind the Logic into single bind, In a class the logic code are not called function instead class method.
 object -> Reference of the class 
 Constructor -> Default, Parameter, Copy
+
+Java provides collection interfaces like List, Set, Map, and Queue, with ready-made classes such as ArrayList, HashSet, HashMap, and PriorityQueue, so you don’t have to write data-handling code from scratch.
+
+
+ArrayList -> duplicate element allowed, indexing, 
