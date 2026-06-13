@@ -24,35 +24,35 @@ public class App {
         // Display all
         watchList.displayMovies();
 
-        // Display duplicates
-        watchList.displayDuplicates();
+        // // Display duplicates
+        // watchList.displayDuplicates();
 
-        // Count keyword
-        System.out.println("\nMovies containing 'in': "
-                + watchList.countMoviesContaining("in"));
+        // // Count keyword
+        // System.out.println("\nMovies containing 'in': "
+        //         + watchList.countMoviesContaining("in"));
 
-        // Movies starting with D
-        watchList.displayMoviesStartingWith('D');
+        // // Movies starting with D
+        // watchList.displayMoviesStartingWith('D');
 
-        // Replace movie
-        watchList.replaceMovie(2, "Narcos");
+        // // Replace movie
+        // watchList.replaceMovie(2, "Narcos");
 
-        // Sort
-        watchList.sortMovies();
+        // // Sort
+        // watchList.sortMovies();
 
-        watchList.displayMovies();
+        // watchList.displayMovies();
 
-        // Reverse order
-        watchList.displayReverse();
+        // // Reverse order
+        // watchList.displayReverse();
 
-        // Remove duplicates
-        watchList.removeDuplicates();
+        // // Remove duplicates
+        // watchList.removeDuplicates();
 
-        watchList.displayMovies();
+        // watchList.displayMovies();
 
-        // Remove movie
-        watchList.removeMovie("Narcos");
+        // // Remove movie
+        // watchList.removeMovie("Narcos");
 
-        watchList.displayMovies();
+        // watchList.displayMovies();
     }
 }
