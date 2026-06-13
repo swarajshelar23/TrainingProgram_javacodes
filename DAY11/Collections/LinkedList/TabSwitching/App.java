@@ -4,20 +4,24 @@ public class App {
 
     public static void main(String[] args) {
 
-        TabFunc tabFunc = new TabFunc();
+        BrowserHistory browser = new BrowserHistory();
 
-        tabFunc.visitPage("www.google.com");
-        tabFunc.visitPage("www.facebook.com");
-        tabFunc.visitPage("www.twitter.com");
+        browser.visitPage("www.google.com");
+        browser.visitPage("www.facebook.com");
+        browser.visitPage("www.youtube.com");
+        browser.visitPage("www.twitter.com");
 
-        tabFunc.displayHistory();
+        browser.displayHistory();
+        browser.printCurrentPage();
+        browser.goBack();
+        browser.goBack();
+        browser.printCurrentPage();
+        browser.goForward();
+        browser.goForward();
 
-        tabFunc.goForward();
+        browser.clearHistory();
+        browser.displayHistory();
 
-        tabFunc.goBack();
 
-        tabFunc.goForward();
-
-        tabFunc.displayHistory();
     }
 }
