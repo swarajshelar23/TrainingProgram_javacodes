@@ -16,8 +16,10 @@ OOPS -> Real World problems are solved, It bind the Logic into single bind, In a
 object -> Reference of the class 
 Constructor -> Default, Parameter, Copy
 
+
 Java provides collection interfaces like List, Set, Map, and Queue, with ready-made classes such as ArrayList, HashSet, HashMap, and PriorityQueue, so you don’t have to write data-handling code from scratch.
 
 
 ArrayList -> duplicate element allowed, indexing, 
 REVIEW CLASS -> REVIEW_ID, WILL HAVE A OBJECT PRODUCT, REVIEW KI LIST, SEARCH REVIEW BY PRODUCTNAME, UPDATE REVIEW OF PRODUCT, SORT REVIEW BY REVIEW_ID
+{} - Generics
