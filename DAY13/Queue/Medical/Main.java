@@ -1,22 +1,24 @@
-package DAY13.Queue.Medical;
+package QueueInterface;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
-        Hospital hospital = new Hospital();
+        // Hospital hos = new Hospital();
+        ArrayList<Patient> line = new ArrayList<>();
 
-        Patient p1 = new Patient(1, "Alice", 30, "Flu");
-        Patient p2 = new Patient(2, "Bob", 45, "Back Pain");
-        Patient p3 = new Patient(3, "Charlie", 25, "Headache");
+        line.add(new Patient(101, "Pankaj", 26, "TimePass"));
 
-        hospital.addPatient(p1);
-        hospital.addPatient(p2);
-        hospital.addPatient(p3);
+        line.add(new Patient(107, "Rahul", 20, "TimePass"));
 
-        hospital.viewNextPatient();
+        line.add(new Patient(102, "Jaanu", 24, "TimePass"));
 
-        hospital.callPatient();
-        hospital.viewNextPatient();
+        line.add(new Patient(105, "Ram", 18, "TimePass"));
 
-        hospital.displayPatients();
+        java.lang.System.out.print(line);
+
+        Collections.sort(line, new SortByPatientAge());
+        java.lang.System.out.println(line);
     }
 }
