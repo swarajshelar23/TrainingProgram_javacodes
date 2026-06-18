@@ -26,6 +26,12 @@ public class Customer {
         private String email;
         private String city;
         private int age;
+
+    public Customer() {
+    }
+
+
+        
         
 
 

@@ -1,11 +1,12 @@
 package com.trainingprogram.swaraj.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.trainingprogram.swaraj.entity.Customer;
 import com.trainingprogram.swaraj.repository.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import java.util.Optional;
-import java.util.List;
 
 @Service
 public class CustomerService {
@@ -37,6 +38,10 @@ public class CustomerService {
 
     public List<Customer> getCustomerByAge(Integer age){
         return repository.findByAgeGreaterThan(age);
+    }
+
+    public List<Customer> SaveCustomerList(List<Customer> customers){
+        return repository.saveAll(customers);
     }
 
 
