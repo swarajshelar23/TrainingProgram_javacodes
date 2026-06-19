@@ -44,6 +44,27 @@ public class CustomerService {
         return repository.saveAll(customers);
     }
 
+    public Customer updateCustomer(Long id, Customer updatedCustomer) {
+
+        Customer customer = repository.findById(id).orElseThrow(() -> new RuntimeException("Customer not found"));
+
+        if(customer != null) {
+
+            customer.setName(updatedCustomer.getName());
+            customer.setEmail(updatedCustomer.getEmail());
+            customer.setCity(updatedCustomer.getCity());
+            customer.setAge(updatedCustomer.getAge());
+            customer.setBankAccountNumber(updatedCustomer.getBankAccountNumber());
+            customer.setPin(updatedCustomer.getPin());
+            return repository.save(customer);
+        }
+        return null;
+    }
+
+    public void deleteCustomer(Long id) {
+        repository.deleteById(id);
+    }
+
 
 
 

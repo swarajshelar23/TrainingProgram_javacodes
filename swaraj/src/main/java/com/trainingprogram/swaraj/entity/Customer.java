@@ -1,5 +1,6 @@
 package com.trainingprogram.swaraj.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,10 +23,23 @@ public class Customer {
         
     
         private Long customerId;
+
+       @Column(nullable = false)
         private String name;
+
+        @Column(unique = true)
         private String email;
+
         private String city;
-        private int age;
+
+        private Integer age;
+
+        @Column(unique = true)
+        private String bankAccountNumber;
+
+        @Column(unique = true)
+        private Integer pin;
+        
 
     public Customer() {
     }
