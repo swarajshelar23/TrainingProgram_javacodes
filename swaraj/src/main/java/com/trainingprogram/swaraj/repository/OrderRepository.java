@@ -1,9 +1,14 @@
 package com.trainingprogram.swaraj.repository;
 
 
-import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+import com.trainingprogram.swaraj.entity.Customer;
 import com.trainingprogram.swaraj.entity.Order;
 
 
@@ -12,12 +17,15 @@ import com.trainingprogram.swaraj.entity.Order;
 public interface OrderRepository extends JpaRepository<Order, Long> {
     
     @Query("SELECT COUNT(o) FROM Order o WHERE o.customer.customerId = :customerId")
-    Long countOfOrders();
+    Long countOfOrders(@Param("customerId") Long customerId);
 
     @Query("SELECT SUM(o.totalPrice) FROM Order o WHERE o.customer.customerId = :customerId")
     Double totalAmount(Long customerId);
 
     @Query("SELECT SUM(o.totalPrice) FROM Order o")
     double totalRevenue();
+
+    @Query("SELECT o.customer FROM Order o WHERE o.product.productId = :productId")
+    List<Customer> findCustomerByProductId(Long productId);
 
 }
